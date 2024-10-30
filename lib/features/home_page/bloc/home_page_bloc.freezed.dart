@@ -22,6 +22,7 @@ mixin _$HomePageEvent {
     required TResult Function() undoRound,
     required TResult Function() clearHistory,
     required TResult Function() switchMode,
+    required TResult Function(int index, Round round) setRound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$HomePageEvent {
     TResult? Function()? undoRound,
     TResult? Function()? clearHistory,
     TResult? Function()? switchMode,
+    TResult? Function(int index, Round round)? setRound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$HomePageEvent {
     TResult Function()? undoRound,
     TResult Function()? clearHistory,
     TResult Function()? switchMode,
+    TResult Function(int index, Round round)? setRound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$HomePageEvent {
     required TResult Function(_UndoRound value) undoRound,
     required TResult Function(_ClearHistory value) clearHistory,
     required TResult Function(_SwitchMode value) switchMode,
+    required TResult Function(_SetRound value) setRound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$HomePageEvent {
     TResult? Function(_UndoRound value)? undoRound,
     TResult? Function(_ClearHistory value)? clearHistory,
     TResult? Function(_SwitchMode value)? switchMode,
+    TResult? Function(_SetRound value)? setRound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$HomePageEvent {
     TResult Function(_UndoRound value)? undoRound,
     TResult Function(_ClearHistory value)? clearHistory,
     TResult Function(_SwitchMode value)? switchMode,
+    TResult Function(_SetRound value)? setRound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -161,6 +167,7 @@ class _$ChangeRoundImpl implements _ChangeRound {
     required TResult Function() undoRound,
     required TResult Function() clearHistory,
     required TResult Function() switchMode,
+    required TResult Function(int index, Round round) setRound,
   }) {
     return changeRound(round);
   }
@@ -172,6 +179,7 @@ class _$ChangeRoundImpl implements _ChangeRound {
     TResult? Function()? undoRound,
     TResult? Function()? clearHistory,
     TResult? Function()? switchMode,
+    TResult? Function(int index, Round round)? setRound,
   }) {
     return changeRound?.call(round);
   }
@@ -183,6 +191,7 @@ class _$ChangeRoundImpl implements _ChangeRound {
     TResult Function()? undoRound,
     TResult Function()? clearHistory,
     TResult Function()? switchMode,
+    TResult Function(int index, Round round)? setRound,
     required TResult orElse(),
   }) {
     if (changeRound != null) {
@@ -198,6 +207,7 @@ class _$ChangeRoundImpl implements _ChangeRound {
     required TResult Function(_UndoRound value) undoRound,
     required TResult Function(_ClearHistory value) clearHistory,
     required TResult Function(_SwitchMode value) switchMode,
+    required TResult Function(_SetRound value) setRound,
   }) {
     return changeRound(this);
   }
@@ -209,6 +219,7 @@ class _$ChangeRoundImpl implements _ChangeRound {
     TResult? Function(_UndoRound value)? undoRound,
     TResult? Function(_ClearHistory value)? clearHistory,
     TResult? Function(_SwitchMode value)? switchMode,
+    TResult? Function(_SetRound value)? setRound,
   }) {
     return changeRound?.call(this);
   }
@@ -220,6 +231,7 @@ class _$ChangeRoundImpl implements _ChangeRound {
     TResult Function(_UndoRound value)? undoRound,
     TResult Function(_ClearHistory value)? clearHistory,
     TResult Function(_SwitchMode value)? switchMode,
+    TResult Function(_SetRound value)? setRound,
     required TResult orElse(),
   }) {
     if (changeRound != null) {
@@ -286,6 +298,7 @@ class _$UndoRoundImpl implements _UndoRound {
     required TResult Function() undoRound,
     required TResult Function() clearHistory,
     required TResult Function() switchMode,
+    required TResult Function(int index, Round round) setRound,
   }) {
     return undoRound();
   }
@@ -297,6 +310,7 @@ class _$UndoRoundImpl implements _UndoRound {
     TResult? Function()? undoRound,
     TResult? Function()? clearHistory,
     TResult? Function()? switchMode,
+    TResult? Function(int index, Round round)? setRound,
   }) {
     return undoRound?.call();
   }
@@ -308,6 +322,7 @@ class _$UndoRoundImpl implements _UndoRound {
     TResult Function()? undoRound,
     TResult Function()? clearHistory,
     TResult Function()? switchMode,
+    TResult Function(int index, Round round)? setRound,
     required TResult orElse(),
   }) {
     if (undoRound != null) {
@@ -323,6 +338,7 @@ class _$UndoRoundImpl implements _UndoRound {
     required TResult Function(_UndoRound value) undoRound,
     required TResult Function(_ClearHistory value) clearHistory,
     required TResult Function(_SwitchMode value) switchMode,
+    required TResult Function(_SetRound value) setRound,
   }) {
     return undoRound(this);
   }
@@ -334,6 +350,7 @@ class _$UndoRoundImpl implements _UndoRound {
     TResult? Function(_UndoRound value)? undoRound,
     TResult? Function(_ClearHistory value)? clearHistory,
     TResult? Function(_SwitchMode value)? switchMode,
+    TResult? Function(_SetRound value)? setRound,
   }) {
     return undoRound?.call(this);
   }
@@ -345,6 +362,7 @@ class _$UndoRoundImpl implements _UndoRound {
     TResult Function(_UndoRound value)? undoRound,
     TResult Function(_ClearHistory value)? clearHistory,
     TResult Function(_SwitchMode value)? switchMode,
+    TResult Function(_SetRound value)? setRound,
     required TResult orElse(),
   }) {
     if (undoRound != null) {
@@ -403,6 +421,7 @@ class _$ClearHistoryImpl implements _ClearHistory {
     required TResult Function() undoRound,
     required TResult Function() clearHistory,
     required TResult Function() switchMode,
+    required TResult Function(int index, Round round) setRound,
   }) {
     return clearHistory();
   }
@@ -414,6 +433,7 @@ class _$ClearHistoryImpl implements _ClearHistory {
     TResult? Function()? undoRound,
     TResult? Function()? clearHistory,
     TResult? Function()? switchMode,
+    TResult? Function(int index, Round round)? setRound,
   }) {
     return clearHistory?.call();
   }
@@ -425,6 +445,7 @@ class _$ClearHistoryImpl implements _ClearHistory {
     TResult Function()? undoRound,
     TResult Function()? clearHistory,
     TResult Function()? switchMode,
+    TResult Function(int index, Round round)? setRound,
     required TResult orElse(),
   }) {
     if (clearHistory != null) {
@@ -440,6 +461,7 @@ class _$ClearHistoryImpl implements _ClearHistory {
     required TResult Function(_UndoRound value) undoRound,
     required TResult Function(_ClearHistory value) clearHistory,
     required TResult Function(_SwitchMode value) switchMode,
+    required TResult Function(_SetRound value) setRound,
   }) {
     return clearHistory(this);
   }
@@ -451,6 +473,7 @@ class _$ClearHistoryImpl implements _ClearHistory {
     TResult? Function(_UndoRound value)? undoRound,
     TResult? Function(_ClearHistory value)? clearHistory,
     TResult? Function(_SwitchMode value)? switchMode,
+    TResult? Function(_SetRound value)? setRound,
   }) {
     return clearHistory?.call(this);
   }
@@ -462,6 +485,7 @@ class _$ClearHistoryImpl implements _ClearHistory {
     TResult Function(_UndoRound value)? undoRound,
     TResult Function(_ClearHistory value)? clearHistory,
     TResult Function(_SwitchMode value)? switchMode,
+    TResult Function(_SetRound value)? setRound,
     required TResult orElse(),
   }) {
     if (clearHistory != null) {
@@ -520,6 +544,7 @@ class _$SwitchModeImpl implements _SwitchMode {
     required TResult Function() undoRound,
     required TResult Function() clearHistory,
     required TResult Function() switchMode,
+    required TResult Function(int index, Round round) setRound,
   }) {
     return switchMode();
   }
@@ -531,6 +556,7 @@ class _$SwitchModeImpl implements _SwitchMode {
     TResult? Function()? undoRound,
     TResult? Function()? clearHistory,
     TResult? Function()? switchMode,
+    TResult? Function(int index, Round round)? setRound,
   }) {
     return switchMode?.call();
   }
@@ -542,6 +568,7 @@ class _$SwitchModeImpl implements _SwitchMode {
     TResult Function()? undoRound,
     TResult Function()? clearHistory,
     TResult Function()? switchMode,
+    TResult Function(int index, Round round)? setRound,
     required TResult orElse(),
   }) {
     if (switchMode != null) {
@@ -557,6 +584,7 @@ class _$SwitchModeImpl implements _SwitchMode {
     required TResult Function(_UndoRound value) undoRound,
     required TResult Function(_ClearHistory value) clearHistory,
     required TResult Function(_SwitchMode value) switchMode,
+    required TResult Function(_SetRound value) setRound,
   }) {
     return switchMode(this);
   }
@@ -568,6 +596,7 @@ class _$SwitchModeImpl implements _SwitchMode {
     TResult? Function(_UndoRound value)? undoRound,
     TResult? Function(_ClearHistory value)? clearHistory,
     TResult? Function(_SwitchMode value)? switchMode,
+    TResult? Function(_SetRound value)? setRound,
   }) {
     return switchMode?.call(this);
   }
@@ -579,6 +608,7 @@ class _$SwitchModeImpl implements _SwitchMode {
     TResult Function(_UndoRound value)? undoRound,
     TResult Function(_ClearHistory value)? clearHistory,
     TResult Function(_SwitchMode value)? switchMode,
+    TResult Function(_SetRound value)? setRound,
     required TResult orElse(),
   }) {
     if (switchMode != null) {
@@ -590,6 +620,174 @@ class _$SwitchModeImpl implements _SwitchMode {
 
 abstract class _SwitchMode implements HomePageEvent {
   const factory _SwitchMode() = _$SwitchModeImpl;
+}
+
+/// @nodoc
+abstract class _$$SetRoundImplCopyWith<$Res> {
+  factory _$$SetRoundImplCopyWith(
+          _$SetRoundImpl value, $Res Function(_$SetRoundImpl) then) =
+      __$$SetRoundImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index, Round round});
+}
+
+/// @nodoc
+class __$$SetRoundImplCopyWithImpl<$Res>
+    extends _$HomePageEventCopyWithImpl<$Res, _$SetRoundImpl>
+    implements _$$SetRoundImplCopyWith<$Res> {
+  __$$SetRoundImplCopyWithImpl(
+      _$SetRoundImpl _value, $Res Function(_$SetRoundImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomePageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+    Object? round = null,
+  }) {
+    return _then(_$SetRoundImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      round: null == round
+          ? _value.round
+          : round // ignore: cast_nullable_to_non_nullable
+              as Round,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetRoundImpl implements _SetRound {
+  const _$SetRoundImpl(this.index, {required this.round});
+
+  @override
+  final int index;
+  @override
+  final Round round;
+
+  @override
+  String toString() {
+    return 'HomePageEvent.setRound(index: $index, round: $round)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetRoundImpl &&
+            (identical(other.index, index) || other.index == index) &&
+            (identical(other.round, round) || other.round == round));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index, round);
+
+  /// Create a copy of HomePageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetRoundImplCopyWith<_$SetRoundImpl> get copyWith =>
+      __$$SetRoundImplCopyWithImpl<_$SetRoundImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Round round) changeRound,
+    required TResult Function() undoRound,
+    required TResult Function() clearHistory,
+    required TResult Function() switchMode,
+    required TResult Function(int index, Round round) setRound,
+  }) {
+    return setRound(index, round);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Round round)? changeRound,
+    TResult? Function()? undoRound,
+    TResult? Function()? clearHistory,
+    TResult? Function()? switchMode,
+    TResult? Function(int index, Round round)? setRound,
+  }) {
+    return setRound?.call(index, round);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Round round)? changeRound,
+    TResult Function()? undoRound,
+    TResult Function()? clearHistory,
+    TResult Function()? switchMode,
+    TResult Function(int index, Round round)? setRound,
+    required TResult orElse(),
+  }) {
+    if (setRound != null) {
+      return setRound(index, round);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeRound value) changeRound,
+    required TResult Function(_UndoRound value) undoRound,
+    required TResult Function(_ClearHistory value) clearHistory,
+    required TResult Function(_SwitchMode value) switchMode,
+    required TResult Function(_SetRound value) setRound,
+  }) {
+    return setRound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeRound value)? changeRound,
+    TResult? Function(_UndoRound value)? undoRound,
+    TResult? Function(_ClearHistory value)? clearHistory,
+    TResult? Function(_SwitchMode value)? switchMode,
+    TResult? Function(_SetRound value)? setRound,
+  }) {
+    return setRound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeRound value)? changeRound,
+    TResult Function(_UndoRound value)? undoRound,
+    TResult Function(_ClearHistory value)? clearHistory,
+    TResult Function(_SwitchMode value)? switchMode,
+    TResult Function(_SetRound value)? setRound,
+    required TResult orElse(),
+  }) {
+    if (setRound != null) {
+      return setRound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetRound implements HomePageEvent {
+  const factory _SetRound(final int index, {required final Round round}) =
+      _$SetRoundImpl;
+
+  int get index;
+  Round get round;
+
+  /// Create a copy of HomePageEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SetRoundImplCopyWith<_$SetRoundImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

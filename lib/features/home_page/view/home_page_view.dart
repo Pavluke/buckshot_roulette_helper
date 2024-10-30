@@ -31,14 +31,25 @@ class HomePageView extends StatelessWidget {
                           child: Row(
                             children: List.generate(
                                 list.length,
-                                (index) =>
-                                    RoundWidget(list.elementAt(index))).gap(10),
+                                (index) => RoundWidget(list.elementAt(index),
+                                    fromHistory: history.elementAt(index),
+                                    isActive: index ==
+                                        list.length -
+                                            list
+                                                .where((element) =>
+                                                    element.isNotUsed)
+                                                .toList()
+                                                .length)).gap(10),
                           ),
                         )
                       : const Text(
                           'Добавьте патрон',
                           style: TextStyle(color: Colors.white),
                         ),
+                  Text(
+                    '${history.map((e) => e.name)}',
+                    style: const TextStyle(color: Colors.white),
+                  ),
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -49,6 +60,24 @@ class HomePageView extends StatelessWidget {
                           children: [
                             AddRoundButton(
                               color: Colors.red,
+                              onPhoneTap: (mode.isPrepare
+                                      ? history.length == 8
+                                      : !list.contains(Round.live))
+                                  ? null
+                                  : () => showModalBottomSheet(
+                                      backgroundColor: Colors.red.shade200,
+                                      context: context,
+                                      builder: (context) => RoundSlider(
+                                          maxValue: list
+                                              .where((round) => round.isNotUsed)
+                                              .toList()
+                                              .length,
+                                          onSave: (value) {
+                                            bloc.add(HomePageEvent.setRound(
+                                                value,
+                                                round: Round.live));
+                                            Navigator.pop(context);
+                                          })),
                               onTap: (mode.isPrepare
                                       ? history.length == 8
                                       : !list.contains(Round.live))
@@ -59,6 +88,24 @@ class HomePageView extends StatelessWidget {
                             ),
                             AddRoundButton(
                               color: Colors.blue,
+                              onPhoneTap: (mode.isPrepare
+                                      ? history.length == 8
+                                      : !list.contains(Round.blank))
+                                  ? null
+                                  : () => showModalBottomSheet(
+                                      backgroundColor: Colors.blue.shade200,
+                                      context: context,
+                                      builder: (context) => RoundSlider(
+                                          maxValue: list
+                                              .where((round) => round.isNotUsed)
+                                              .toList()
+                                              .length,
+                                          onSave: (value) {
+                                            bloc.add(HomePageEvent.setRound(
+                                                value,
+                                                round: Round.blank));
+                                            Navigator.pop(context);
+                                          })),
                               onTap: (mode.isPrepare
                                       ? history.length == 8
                                       : !list.contains(Round.blank))
@@ -71,16 +118,17 @@ class HomePageView extends StatelessWidget {
                         ),
                       ),
                       FilledButton(
-                          onPressed: history.isEmpty
-                              ? null
-                              : () => bloc.add(const HomePageEvent.undoRound()),
-                          onLongPress: history.isEmpty
+                          style: FilledButton.styleFrom(
+                              shape: const CircleBorder()),
+                          onPressed:
+                              history.isEmpty || mode.isPlay ? null : () {},
+                          onLongPress: history.isEmpty || mode.isPlay
                               ? null
                               : () =>
                                   bloc.add(const HomePageEvent.clearHistory()),
                           child: const Icon(Icons.undo)),
                       const SizedBox(
-                        height: 100,
+                        height: 20,
                       ),
                       SizedBox(
                         height: 80,
@@ -114,6 +162,39 @@ class HomePageView extends StatelessWidget {
             },
           ),
         ),
+      ),
+    );
+  }
+}
+
+class RoundSlider extends StatefulWidget {
+  const RoundSlider({super.key, required this.maxValue, required this.onSave});
+  final int maxValue;
+  final Function(int value) onSave;
+  @override
+  State<RoundSlider> createState() => _RoundSliderState();
+}
+
+class _RoundSliderState extends State<RoundSlider> {
+  double value = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 100),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Slider(
+              min: 1,
+              max: widget.maxValue.toDouble(),
+              divisions: widget.maxValue - 1,
+              label: value.toInt().toString(),
+              value: value,
+              onChanged: (value) => setState(() => this.value = value)),
+          FilledButton(
+              onPressed: () => widget.onSave.call(value.toInt()),
+              child: const Text('OK'))
+        ].gap(50),
       ),
     );
   }
